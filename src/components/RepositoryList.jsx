@@ -1,8 +1,12 @@
 import { FlatList, View, StyleSheet } from "react-native";
 import RepositoryItem from "./RepositoryItem";
 import Text from "./Text";
+import theme from "../theme";
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: theme.colors.faintWhiteBG,
+  },
   separator: {
     height: 10,
   },
@@ -15,7 +19,7 @@ const repositories = [
     description: "Build forms in React, without the tears",
     language: "TypeScript",
     forksCount: 1589,
-    stargazersCount: 21553,
+    stargazersCount: 100000,
     ratingAverage: 88,
     reviewCount: 4,
     ownerAvatarUrl: "https://avatars2.githubusercontent.com/u/4060187?v=4",
@@ -26,7 +30,7 @@ const repositories = [
     description: "Ruby on Rails",
     language: "Ruby",
     forksCount: 18349,
-    stargazersCount: 45377,
+    stargazersCount: 25377,
     ratingAverage: 100,
     reviewCount: 2,
     ownerAvatarUrl: "https://avatars1.githubusercontent.com/u/4223?v=4",
@@ -63,17 +67,17 @@ const RepositoryList = () => {
   };
 
   return (
-    <>
+    <View style={styles.container}>
       <FlatList
         data={repositories}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
         ItemSeparatorComponent={ItemSeparator}
       />
-      <Text fontSize="subheading" style={{ paddingBottom: 49 }}>
-        This is custom made Text
-      </Text>
-    </>
+      {/* <Text fontSize="subheading" style={{ paddingBottom: 49 }}> */}
+      {/* This is custom made Text */}
+      {/* </Text> */}
+    </View>
   );
 };
 
