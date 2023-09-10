@@ -1,0 +1,1 @@
+https://callstack.github.io/react-native-paper/4.0/integrate-app-bar-with-react-navigation.html

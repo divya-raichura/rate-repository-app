@@ -1,4 +1,4 @@
-import { FlatList, View, StyleSheet } from "react-native";
+import { FlatList, View, StyleSheet, Button } from "react-native";
 import RepositoryItem from "./RepositoryItem";
 import Text from "./Text";
 import theme from "../theme";
@@ -61,13 +61,17 @@ const repositories = [
 
 const ItemSeparator = () => <View style={styles.separator} />;
 
-const RepositoryList = () => {
+const RepositoryList = ({ navigation }) => {
   const renderItem = ({ item }) => {
     return <RepositoryItem repository={item} />;
   };
 
   return (
     <View style={styles.container}>
+      <Button
+        title="Go to SignIn"
+        onPress={() => navigation.navigate("SignIn")}
+      />
       <FlatList
         data={repositories}
         renderItem={renderItem}
